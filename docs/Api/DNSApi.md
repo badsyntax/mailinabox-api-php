@@ -50,7 +50,7 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
 );
 $domain = 'domain_example'; // string | DNS record domain
 $type = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\DNSRecordType(); // \MailInABoxAPI\Client\Model\DNSRecordType | Record type
-$body = 'body_example'; // string | The value of the DNS record
+$body = 'body_example'; // string | The value of the DNS record.
 
 try {
     $result = $apiInstance->addDnsCustomRecord($domain, $type, $body);
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **domain** | **string**| DNS record domain |
  **type** | [**\MailInABoxAPI\Client\Model\DNSRecordType**](../Model/.md)| Record type |
- **body** | **string**| The value of the DNS record |
+ **body** | **string**| The value of the DNS record. |
 
 ### Return type
 
@@ -115,8 +115,8 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain = 'domain_example'; // string | DNS record domain
-$body = 'body_example'; // string | The value of the DNS record
+$domain = 'domain_example'; // string | DNS record domain.
+$body = 'body_example'; // string | The value of the DNS record.
 
 try {
     $result = $apiInstance->addDnsCustomRecordForTypeA($domain, $body);
@@ -132,8 +132,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **domain** | **string**| DNS record domain |
- **body** | **string**| The value of the DNS record |
+ **domain** | **string**| DNS record domain. |
+ **body** | **string**| The value of the DNS record. |
 
 ### Return type
 
@@ -180,7 +180,7 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
     new GuzzleHttp\Client(),
     $config
 );
-$hostnames = 'hostnames_example'; // string | Hostnames separated with commas or spaces
+$hostnames = 'hostnames_example'; // string | Hostnames separated with commas or spaces.
 
 try {
     $result = $apiInstance->addDnsSecondaryNameserver($hostnames);
@@ -196,7 +196,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **hostnames** | **string**| Hostnames separated with commas or spaces |
+ **hostnames** | **string**| Hostnames separated with commas or spaces. |
 
 ### Return type
 
@@ -281,7 +281,7 @@ This endpoint does not need any parameter.
 
 
 
-Get DNS records for domain and type
+Get DNS records for domain and type.
 
 ### Example
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 
 
-Get DNS A records for domain
+Get DNS A records for domain.
 
 ### Example
 
@@ -367,7 +367,7 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain = 'domain_example'; // string | DNS record domain
+$domain = 'domain_example'; // string | DNS record domain.
 
 try {
     $result = $apiInstance->getDnsCustomRecordsForDomainAndTypeA($domain);
@@ -383,7 +383,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **domain** | **string**| DNS record domain |
+ **domain** | **string**| DNS record domain. |
 
 ### Return type
 
@@ -609,7 +609,7 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
 );
 $domain = 'domain_example'; // string | DNS record domain
 $type = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\DNSRecordType(); // \MailInABoxAPI\Client\Model\DNSRecordType | Record type
-$body = 'body_example'; // string | The value of the DNS record
+$body = 'body_example'; // string | The value of the DNS record.
 
 try {
     $result = $apiInstance->removeDnsCustomRecord($domain, $type, $body);
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **domain** | **string**| DNS record domain |
  **type** | [**\MailInABoxAPI\Client\Model\DNSRecordType**](../Model/.md)| Record type |
- **body** | **string**| The value of the DNS record |
+ **body** | **string**| The value of the DNS record. |
 
 ### Return type
 
@@ -674,8 +674,8 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain = 'domain_example'; // string | DNS record domain
-$body = 'body_example'; // string | The value of the DNS record
+$domain = 'domain_example'; // string | DNS record domain.
+$body = 'body_example'; // string | The value of the DNS record.
 
 try {
     $result = $apiInstance->removeDnsCustomRecordForTypeA($domain, $body);
@@ -691,8 +691,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **domain** | **string**| DNS record domain |
- **body** | **string**| The value of the DNS record |
+ **domain** | **string**| DNS record domain. |
+ **body** | **string**| The value of the DNS record. |
 
 ### Return type
 
@@ -804,7 +804,7 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
 );
 $domain = 'domain_example'; // string | DNS record domain
 $type = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\DNSRecordType(); // \MailInABoxAPI\Client\Model\DNSRecordType | Record type
-$body = 'body_example'; // string | The value of the DNS record
+$body = 'body_example'; // string | The value of the DNS record.
 
 try {
     $result = $apiInstance->updateDnsCustomRecord($domain, $type, $body);
@@ -822,7 +822,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **domain** | **string**| DNS record domain |
  **type** | [**\MailInABoxAPI\Client\Model\DNSRecordType**](../Model/.md)| Record type |
- **body** | **string**| The value of the DNS record |
+ **body** | **string**| The value of the DNS record. |
 
 ### Return type
 
@@ -869,8 +869,8 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain = 'domain_example'; // string | DNS record domain
-$body = 'body_example'; // string | The value of the DNS record
+$domain = 'domain_example'; // string | DNS record domain.
+$body = 'body_example'; // string | The value of the DNS record.
 
 try {
     $result = $apiInstance->updateDnsCustomRecordForTypeA($domain, $body);
@@ -886,8 +886,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **domain** | **string**| DNS record domain |
- **body** | **string**| The value of the DNS record |
+ **domain** | **string**| DNS record domain. |
+ **body** | **string**| The value of the DNS record. |
 
 ### Return type
 

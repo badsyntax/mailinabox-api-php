@@ -38,7 +38,7 @@ $apiInstance = new MailInABoxAPI\Client\Api\SSLApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain = 'domain_example'; // string | Domain to generate CSR for
+$domain = 'domain_example'; // string | Domain to generate CSR for.
 $countrycode = 'countrycode_example'; // string | 
 
 try {
@@ -55,7 +55,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **domain** | **string**| Domain to generate CSR for |
+ **domain** | **string**| Domain to generate CSR for. |
  **countrycode** | **string**|  |
 
 ### Return type
@@ -163,8 +163,8 @@ $apiInstance = new MailInABoxAPI\Client\Api\SSLApi(
     $config
 );
 $domain = 'domain_example'; // string | Hostname format.
-$cert = 'cert_example'; // string | TLS/SSL certificate
-$chain = 'chain_example'; // string | TLS/SSL intermediate chain (if provided, else empty string)
+$cert = 'cert_example'; // string | TLS/SSL certificate.
+$chain = 'chain_example'; // string | TLS/SSL intermediate chain (if provided, else empty string).
 
 try {
     $result = $apiInstance->installSSLCertificate($domain, $cert, $chain);
@@ -181,8 +181,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **domain** | **string**| Hostname format. |
- **cert** | **string**| TLS/SSL certificate |
- **chain** | **string**| TLS/SSL intermediate chain (if provided, else empty string) |
+ **cert** | **string**| TLS/SSL certificate. |
+ **chain** | **string**| TLS/SSL intermediate chain (if provided, else empty string). |
 
 ### Return type
 

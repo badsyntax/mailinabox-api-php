@@ -1,7 +1,7 @@
 {
     "name": "mailinabox/mailinabox-api",
-    "version": "0.0.0-SNAPSHOT.2",
-    "description": "Mail-in-a-Box API HTTP specification.",
+    "version": "0.0.0-SNAPSHOT.3",
+    "description": "PHP client SDK for the Mail-in-a-Box API.",
     "type": "library",
     "keywords": [
         "mailinabox",

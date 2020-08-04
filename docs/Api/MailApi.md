@@ -177,7 +177,7 @@ $apiInstance = new MailInABoxAPI\Client\Api\MailApi(
     new GuzzleHttp\Client(),
     $config
 );
-$format = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\MailAliasesResponseFormat(); // \MailInABoxAPI\Client\Model\MailAliasesResponseFormat | The format of the response
+$format = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\MailAliasesResponseFormat(); // \MailInABoxAPI\Client\Model\MailAliasesResponseFormat | The format of the response.
 
 try {
     $result = $apiInstance->getMailAliases($format);
@@ -193,7 +193,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | [**\MailInABoxAPI\Client\Model\MailAliasesResponseFormat**](../Model/.md)| The format of the response | [optional]
+ **format** | [**\MailInABoxAPI\Client\Model\MailAliasesResponseFormat**](../Model/.md)| The format of the response. | [optional]
 
 ### Return type
 
@@ -362,7 +362,7 @@ $apiInstance = new MailInABoxAPI\Client\Api\MailApi(
     new GuzzleHttp\Client(),
     $config
 );
-$format = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\MailUsersResponseFormat(); // \MailInABoxAPI\Client\Model\MailUsersResponseFormat | The format of the response
+$format = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\MailUsersResponseFormat(); // \MailInABoxAPI\Client\Model\MailUsersResponseFormat | The format of the response.
 
 try {
     $result = $apiInstance->getMailUsers($format);
@@ -378,7 +378,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | [**\MailInABoxAPI\Client\Model\MailUsersResponseFormat**](../Model/.md)| The format of the response | [optional]
+ **format** | [**\MailInABoxAPI\Client\Model\MailUsersResponseFormat**](../Model/.md)| The format of the response. | [optional]
 
 ### Return type
 

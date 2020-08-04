@@ -1,11 +1,13 @@
 # MailInABoxAPI
 
-Mail-in-a-Box API HTTP specification.
+[![Build & Publish](https://github.com/badsyntax/mailinabox-api/workflows/Build%20&%20Publish/badge.svg)](https://github.com/badsyntax/mailinabox-api/actions?query=workflow%3A%22Build+%26+Publish%22)
 
-For more information, please visit [https://mailinabox.email/](https://mailinabox.email/)
+PHP client SDK for the Mail-in-a-Box API.
 
 - API version: 0.46.0
-- Package version: 0.0.0-SNAPSHOT.2
+- Package version: 0.0.0-SNAPSHOT.3
+
+**NOTE:** This package is [auto-generated](https://github.com/badsyntax/mailinabox-api) from the Mail-In-A-Box OpenAPI spec.
 
 ## Requirements
 
@@ -19,14 +21,8 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 
 ```json
 {
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/badsyntax/mailinabox-api-php.git"
-    }
-  ],
   "require": {
-    "badsyntax/mailinabox-api-php": "*@dev"
+    "mailinabox/mailinabox-api": "0.0.0-SNAPSHOT.3"
   }
 }
 ```
@@ -38,7 +34,7 @@ Then run `composer install`
 Download the files and include `autoload.php`:
 
 ```php
-    require_once('/path/to/MailInABoxAPI/vendor/autoload.php');
+    require_once('/path/to/mailinabox-api-php/vendor/autoload.php');
 ```
 
 ## Tests
@@ -74,7 +70,7 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
 );
 $domain = 'domain_example'; // string | DNS record domain
 $type = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\DNSRecordType(); // \MailInABoxAPI\Client\Model\DNSRecordType | Record type
-$body = 'body_example'; // string | The value of the DNS record
+$body = 'body_example'; // string | The value of the DNS record.
 
 try {
     $result = $apiInstance->addDnsCustomRecord($domain, $type, $body);
@@ -199,7 +195,8 @@ Class | Method | HTTP request | Description
 - **Type**: HTTP basic authentication
 
 
-## Author
+## License
 
+MIT License
 
-
+Copyright (c) 2020 Richard Willis
