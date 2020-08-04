@@ -1,6 +1,6 @@
 {
-    "name": "badsyntax/mailinabox-api",
-    "version": "0.0.0-SNAPSHOT.1",
+    "name": "mailinabox/mailinabox-api",
+    "version": "0.0.0-SNAPSHOT.2",
     "description": "Mail-in-a-Box API HTTP specification.",
     "type": "library",
     "keywords": [

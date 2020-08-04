@@ -5,7 +5,7 @@ Mail-in-a-Box API HTTP specification.
 For more information, please visit [https://mailinabox.email/](https://mailinabox.email/)
 
 - API version: 0.46.0
-- Package version: 0.0.0-SNAPSHOT.1
+- Package version: 0.0.0-SNAPSHOT.2
 
 ## Requirements
 
