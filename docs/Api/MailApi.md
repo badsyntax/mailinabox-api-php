@@ -4,17 +4,17 @@ All URIs are relative to *https://box.example.com/admin*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addMailUser**](MailApi.md#addMailUser) | **POST** /mail/users/add | 
-[**addMailUserPrivilege**](MailApi.md#addMailUserPrivilege) | **POST** /mail/users/privileges/add | 
-[**getMailAliases**](MailApi.md#getMailAliases) | **GET** /mail/aliases | 
-[**getMailDomains**](MailApi.md#getMailDomains) | **GET** /mail/domains | 
-[**getMailUserPrivileges**](MailApi.md#getMailUserPrivileges) | **GET** /mail/users/privileges | 
-[**getMailUsers**](MailApi.md#getMailUsers) | **GET** /mail/users | 
-[**removeMailAlias**](MailApi.md#removeMailAlias) | **POST** /mail/aliases/remove | 
-[**removeMailUser**](MailApi.md#removeMailUser) | **POST** /mail/users/remove | 
-[**removeMailUserPrivilege**](MailApi.md#removeMailUserPrivilege) | **POST** /mail/users/privileges/remove | 
-[**setMailUserPassword**](MailApi.md#setMailUserPassword) | **POST** /mail/users/password | 
-[**upsertMailAlias**](MailApi.md#upsertMailAlias) | **POST** /mail/aliases/add | 
+[**addMailUser**](MailApi.md#addMailUser) | **POST** /mail/users/add | Add mail user
+[**addMailUserPrivilege**](MailApi.md#addMailUserPrivilege) | **POST** /mail/users/privileges/add | Add mail user privilege
+[**getMailAliases**](MailApi.md#getMailAliases) | **GET** /mail/aliases | Get mail aliases
+[**getMailDomains**](MailApi.md#getMailDomains) | **GET** /mail/domains | Get mail domains
+[**getMailUserPrivileges**](MailApi.md#getMailUserPrivileges) | **GET** /mail/users/privileges | Get mail user privileges
+[**getMailUsers**](MailApi.md#getMailUsers) | **GET** /mail/users | Get mail users
+[**removeMailAlias**](MailApi.md#removeMailAlias) | **POST** /mail/aliases/remove | Remove mail alias
+[**removeMailUser**](MailApi.md#removeMailUser) | **POST** /mail/users/remove | Remove mail user
+[**removeMailUserPrivilege**](MailApi.md#removeMailUserPrivilege) | **POST** /mail/users/privileges/remove | Remove mail user privilege
+[**setMailUserPassword**](MailApi.md#setMailUserPassword) | **POST** /mail/users/password | Set mail user password
+[**upsertMailAlias**](MailApi.md#upsertMailAlias) | **POST** /mail/aliases/add | Upsert mail alias
 
 
 
@@ -22,9 +22,9 @@ Method | HTTP request | Description
 
 > string addMailUser($email, $password, $privileges)
 
+Add mail user
 
-
-Add a new mail user.
+Adds a new mail user.
 
 ### Example
 
@@ -89,9 +89,9 @@ Name | Type | Description  | Notes
 
 > string addMailUserPrivilege($email, $privilege)
 
+Add mail user privilege
 
-
-Add a privilege to a mail user.
+Adds a privilege to an existing mail user.
 
 ### Example
 
@@ -154,9 +154,9 @@ Name | Type | Description  | Notes
 
 > \MailInABoxAPI\Client\Model\MailAliasByDomain[] getMailAliases($format)
 
+Get mail aliases
 
-
-Retrieve all mail aliases.
+Returns all mail aliases.
 
 ### Example
 
@@ -217,9 +217,9 @@ Name | Type | Description  | Notes
 
 > string getMailDomains()
 
+Get mail domains
 
-
-Retrieve all mail domains.
+Returns all mail domains.
 
 ### Example
 
@@ -276,9 +276,9 @@ This endpoint does not need any parameter.
 
 > \MailInABoxAPI\Client\Model\MailUserPrivilege getMailUserPrivileges($email)
 
+Get mail user privileges
 
-
-Retrieve privileges for a user.
+Returns all privileges for an existing mail user.
 
 ### Example
 
@@ -339,9 +339,9 @@ Name | Type | Description  | Notes
 
 > \MailInABoxAPI\Client\Model\MailUsersResponse getMailUsers($format)
 
+Get mail users
 
-
-Retrieve all mail users.
+Returns all mail users.
 
 ### Example
 
@@ -402,9 +402,9 @@ Name | Type | Description  | Notes
 
 > string removeMailAlias($address)
 
+Remove mail alias
 
-
-Remove a mail alias.
+Removes a mail alias.
 
 ### Example
 
@@ -465,9 +465,9 @@ Name | Type | Description  | Notes
 
 > string removeMailUser($email)
 
+Remove mail user
 
-
-Remove a mail user.
+Removes an existing mail user.
 
 ### Example
 
@@ -528,9 +528,9 @@ Name | Type | Description  | Notes
 
 > string removeMailUserPrivilege($email, $privilege)
 
+Remove mail user privilege
 
-
-Remove a privilege from a mail user.
+Removes a privilege from an existing mail user.
 
 ### Example
 
@@ -593,9 +593,9 @@ Name | Type | Description  | Notes
 
 > string setMailUserPassword($email, $password)
 
+Set mail user password
 
-
-Set a password for a user.
+Sets a password for an existing mail user.
 
 ### Example
 
@@ -658,9 +658,9 @@ Name | Type | Description  | Notes
 
 > string upsertMailAlias($updateIfExists, $address, $forwardsTo, $permittedSenders)
 
+Upsert mail alias
 
-
-Add or update a mail alias. If updating, you need to set `update_if_exists: 1`.
+Adds or updates a mail alias. If updating, you need to set `update_if_exists: 1`.
 
 ### Example
 

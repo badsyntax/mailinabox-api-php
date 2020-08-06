@@ -4,10 +4,10 @@ All URIs are relative to *https://box.example.com/admin*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generateSSLCSR**](SSLApi.md#generateSSLCSR) | **POST** /ssl/csr/{domain} | 
-[**getSSLStatus**](SSLApi.md#getSSLStatus) | **GET** /ssl/status | 
-[**installSSLCertificate**](SSLApi.md#installSSLCertificate) | **POST** /ssl/install | 
-[**provisionSSLCertificates**](SSLApi.md#provisionSSLCertificates) | **POST** /ssl/provision | 
+[**generateSSLCSR**](SSLApi.md#generateSSLCSR) | **POST** /ssl/csr/{domain} | Generate SSL CSR
+[**getSSLStatus**](SSLApi.md#getSSLStatus) | **GET** /ssl/status | Get SSL status
+[**installSSLCertificate**](SSLApi.md#installSSLCertificate) | **POST** /ssl/install | Install SSL certificate
+[**provisionSSLCertificates**](SSLApi.md#provisionSSLCertificates) | **POST** /ssl/provision | Provision SSL certificates
 
 
 
@@ -15,9 +15,9 @@ Method | HTTP request | Description
 
 > string generateSSLCSR($domain, $countrycode)
 
+Generate SSL CSR
 
-
-Generate a Certificate Signing Request (CSR) for a domain & country code.
+Generates a Certificate Signing Request (CSR) for a domain & country code.
 
 ### Example
 
@@ -80,9 +80,9 @@ Name | Type | Description  | Notes
 
 > \MailInABoxAPI\Client\Model\SSLStatusResponse getSSLStatus()
 
+Get SSL status
 
-
-Retrieve SSL status for all domains.
+Returns the SSL status for all domains.
 
 ### Example
 
@@ -139,9 +139,9 @@ This endpoint does not need any parameter.
 
 > string installSSLCertificate($domain, $cert, $chain)
 
+Install SSL certificate
 
-
-Install a custom certificate. The chain certificate is optional.
+Installs a custom certificate. The chain certificate is optional.
 
 ### Example
 
@@ -206,9 +206,9 @@ Name | Type | Description  | Notes
 
 > \MailInABoxAPI\Client\Model\SSLCertificatesProvisionResponse provisionSSLCertificates()
 
+Provision SSL certificates
 
-
-Provision certificates for all domains.
+Provisions certificates for all domains.
 
 ### Example
 

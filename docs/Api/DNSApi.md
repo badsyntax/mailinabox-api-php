@@ -4,30 +4,30 @@ All URIs are relative to *https://box.example.com/admin*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addDnsCustomRecord**](DNSApi.md#addDnsCustomRecord) | **POST** /dns/custom/{domain}/{type} | 
-[**addDnsCustomRecordForTypeA**](DNSApi.md#addDnsCustomRecordForTypeA) | **POST** /dns/custom/{domain} | 
-[**addDnsSecondaryNameserver**](DNSApi.md#addDnsSecondaryNameserver) | **POST** /dns/secondary-nameserver | 
-[**getDnsCustomRecords**](DNSApi.md#getDnsCustomRecords) | **GET** /dns/custom | 
-[**getDnsCustomRecordsForDomainAndType**](DNSApi.md#getDnsCustomRecordsForDomainAndType) | **GET** /dns/custom/{domain}/{type} | 
-[**getDnsCustomRecordsForDomainAndTypeA**](DNSApi.md#getDnsCustomRecordsForDomainAndTypeA) | **GET** /dns/custom/{domain} | 
-[**getDnsDump**](DNSApi.md#getDnsDump) | **GET** /dns/dump | 
-[**getDnsSecondaryNameserver**](DNSApi.md#getDnsSecondaryNameserver) | **GET** /dns/secondary-nameserver | 
-[**getDnsZones**](DNSApi.md#getDnsZones) | **GET** /dns/zones | 
-[**removeDnsCustomRecord**](DNSApi.md#removeDnsCustomRecord) | **DELETE** /dns/custom/{domain}/{type} | 
-[**removeDnsCustomRecordForTypeA**](DNSApi.md#removeDnsCustomRecordForTypeA) | **DELETE** /dns/custom/{domain} | 
-[**updateDns**](DNSApi.md#updateDns) | **POST** /dns/update | 
-[**updateDnsCustomRecord**](DNSApi.md#updateDnsCustomRecord) | **PUT** /dns/custom/{domain}/{type} | 
-[**updateDnsCustomRecordForTypeA**](DNSApi.md#updateDnsCustomRecordForTypeA) | **PUT** /dns/custom/{domain} | 
+[**addDnsCustomARecord**](DNSApi.md#addDnsCustomARecord) | **POST** /dns/custom/{qname} | Add DNS custom A record
+[**addDnsCustomRecord**](DNSApi.md#addDnsCustomRecord) | **POST** /dns/custom/{qname}/{rtype} | Add DNS custom record
+[**addDnsSecondaryNameserver**](DNSApi.md#addDnsSecondaryNameserver) | **POST** /dns/secondary-nameserver | Add DNS secondary nameserver
+[**getDnsCustomARecordsForQName**](DNSApi.md#getDnsCustomARecordsForQName) | **GET** /dns/custom/{qname} | Get DNS custom A records
+[**getDnsCustomRecords**](DNSApi.md#getDnsCustomRecords) | **GET** /dns/custom | Get DNS custom records
+[**getDnsCustomRecordsForQNameAndType**](DNSApi.md#getDnsCustomRecordsForQNameAndType) | **GET** /dns/custom/{qname}/{rtype} | Get DNS custom records
+[**getDnsDump**](DNSApi.md#getDnsDump) | **GET** /dns/dump | Get DNS dump
+[**getDnsSecondaryNameserver**](DNSApi.md#getDnsSecondaryNameserver) | **GET** /dns/secondary-nameserver | Get DNS secondary nameserver
+[**getDnsZones**](DNSApi.md#getDnsZones) | **GET** /dns/zones | Get DNS zones
+[**removeDnsCustomARecord**](DNSApi.md#removeDnsCustomARecord) | **DELETE** /dns/custom/{qname} | Remove DNS custom A record
+[**removeDnsCustomRecord**](DNSApi.md#removeDnsCustomRecord) | **DELETE** /dns/custom/{qname}/{rtype} | Remove DNS custom record
+[**updateDns**](DNSApi.md#updateDns) | **POST** /dns/update | Update DNS
+[**updateDnsCustomARecord**](DNSApi.md#updateDnsCustomARecord) | **PUT** /dns/custom/{qname} | Update DNS custom A record
+[**updateDnsCustomRecord**](DNSApi.md#updateDnsCustomRecord) | **PUT** /dns/custom/{qname}/{rtype} | Update DNS custom record
 
 
 
-## addDnsCustomRecord
+## addDnsCustomARecord
 
-> string addDnsCustomRecord($domain, $type, $body)
+> string addDnsCustomARecord($qname, $body)
 
+Add DNS custom A record
 
-
-Add a custom DNS record.
+Adds a custom DNS A record for the specified query name.
 
 ### Example
 
@@ -48,15 +48,14 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain = 'domain_example'; // string | DNS record domain
-$type = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\DNSRecordType(); // \MailInABoxAPI\Client\Model\DNSRecordType | Record type
+$qname = 'qname_example'; // string | DNS query name.
 $body = 'body_example'; // string | The value of the DNS record.
 
 try {
-    $result = $apiInstance->addDnsCustomRecord($domain, $type, $body);
+    $result = $apiInstance->addDnsCustomARecord($qname, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DNSApi->addDnsCustomRecord: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DNSApi->addDnsCustomARecord: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -66,8 +65,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **domain** | **string**| DNS record domain |
- **type** | [**\MailInABoxAPI\Client\Model\DNSRecordType**](../Model/.md)| Record type |
+ **qname** | **string**| DNS query name. |
  **body** | **string**| The value of the DNS record. |
 
 ### Return type
@@ -88,13 +86,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../../README.md)
 
 
-## addDnsCustomRecordForTypeA
+## addDnsCustomRecord
 
-> string addDnsCustomRecordForTypeA($domain, $body)
+> string addDnsCustomRecord($qname, $rtype, $body)
 
+Add DNS custom record
 
-
-Add a custom DNS A record.
+Adds a custom DNS record for the specified query name and type.
 
 ### Example
 
@@ -115,14 +113,15 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain = 'domain_example'; // string | DNS record domain.
+$qname = 'qname_example'; // string | DNS record query name
+$rtype = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\DNSRecordType(); // \MailInABoxAPI\Client\Model\DNSRecordType | Record type
 $body = 'body_example'; // string | The value of the DNS record.
 
 try {
-    $result = $apiInstance->addDnsCustomRecordForTypeA($domain, $body);
+    $result = $apiInstance->addDnsCustomRecord($qname, $rtype, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DNSApi->addDnsCustomRecordForTypeA: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DNSApi->addDnsCustomRecord: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -132,7 +131,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **domain** | **string**| DNS record domain. |
+ **qname** | **string**| DNS record query name |
+ **rtype** | [**\MailInABoxAPI\Client\Model\DNSRecordType**](../Model/.md)| Record type |
  **body** | **string**| The value of the DNS record. |
 
 ### Return type
@@ -157,9 +157,9 @@ Name | Type | Description  | Notes
 
 > string addDnsSecondaryNameserver($hostnames)
 
+Add DNS secondary nameserver
 
-
-Add secondary nameservers.
+Adds one or more secondary nameservers.
 
 ### Example
 
@@ -216,13 +216,76 @@ Name | Type | Description  | Notes
 [[Back to README]](../../README.md)
 
 
+## getDnsCustomARecordsForQName
+
+> \MailInABoxAPI\Client\Model\DNSCustomRecordsResponse getDnsCustomARecordsForQName($qname)
+
+Get DNS custom A records
+
+Returns all custom A records for the specified query name.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: basicAuth
+$config = MailInABoxAPI\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$qname = 'qname_example'; // string | DNS query name.
+
+try {
+    $result = $apiInstance->getDnsCustomARecordsForQName($qname);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DNSApi->getDnsCustomARecordsForQName: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **qname** | **string**| DNS query name. |
+
+### Return type
+
+[**\MailInABoxAPI\Client\Model\DNSCustomRecordsResponse**](../Model/DNSCustomRecordsResponse.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
 ## getDnsCustomRecords
 
 > \MailInABoxAPI\Client\Model\DNSCustomRecordsResponse getDnsCustomRecords()
 
+Get DNS custom records
 
-
-Retrieve all custom DNS records.
+Returns all custom DNS records.
 
 ### Example
 
@@ -275,78 +338,13 @@ This endpoint does not need any parameter.
 [[Back to README]](../../README.md)
 
 
-## getDnsCustomRecordsForDomainAndType
+## getDnsCustomRecordsForQNameAndType
 
-> \MailInABoxAPI\Client\Model\DNSCustomRecordsResponse getDnsCustomRecordsForDomainAndType($domain, $type)
+> \MailInABoxAPI\Client\Model\DNSCustomRecordsResponse getDnsCustomRecordsForQNameAndType($qname, $rtype)
 
+Get DNS custom records
 
-
-Get DNS records for domain and type.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure HTTP basic authorization: basicAuth
-$config = MailInABoxAPI\Client\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
-
-$apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$domain = 'domain_example'; // string | DNS record domain
-$type = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\DNSRecordType(); // \MailInABoxAPI\Client\Model\DNSRecordType | Record type
-
-try {
-    $result = $apiInstance->getDnsCustomRecordsForDomainAndType($domain, $type);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DNSApi->getDnsCustomRecordsForDomainAndType: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **domain** | **string**| DNS record domain |
- **type** | [**\MailInABoxAPI\Client\Model\DNSRecordType**](../Model/.md)| Record type |
-
-### Return type
-
-[**\MailInABoxAPI\Client\Model\DNSCustomRecordsResponse**](../Model/DNSCustomRecordsResponse.md)
-
-### Authorization
-
-[basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, text/html
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
-
-
-## getDnsCustomRecordsForDomainAndTypeA
-
-> \MailInABoxAPI\Client\Model\DNSCustomRecordsResponse getDnsCustomRecordsForDomainAndTypeA($domain)
-
-
-
-Get DNS A records for domain.
+Returns all custom records for the specified query name and type.
 
 ### Example
 
@@ -367,13 +365,14 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain = 'domain_example'; // string | DNS record domain.
+$qname = 'qname_example'; // string | DNS record query name
+$rtype = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\DNSRecordType(); // \MailInABoxAPI\Client\Model\DNSRecordType | Record type
 
 try {
-    $result = $apiInstance->getDnsCustomRecordsForDomainAndTypeA($domain);
+    $result = $apiInstance->getDnsCustomRecordsForQNameAndType($qname, $rtype);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DNSApi->getDnsCustomRecordsForDomainAndTypeA: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DNSApi->getDnsCustomRecordsForQNameAndType: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -383,7 +382,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **domain** | **string**| DNS record domain. |
+ **qname** | **string**| DNS record query name |
+ **rtype** | [**\MailInABoxAPI\Client\Model\DNSRecordType**](../Model/.md)| Record type |
 
 ### Return type
 
@@ -407,9 +407,9 @@ Name | Type | Description  | Notes
 
 > \MailInABoxAPI\Client\Model\DNSDumpResponse getDnsDump()
 
+Get DNS dump
 
-
-Retrieve all DNS records.
+Returns all DNS records.
 
 ### Example
 
@@ -466,9 +466,9 @@ This endpoint does not need any parameter.
 
 > \MailInABoxAPI\Client\Model\DNSSecondaryNameserverResponse getDnsSecondaryNameserver()
 
+Get DNS secondary nameserver
 
-
-Retrieve secondary nameservers.
+Returns a list of nameserver hostnames.
 
 ### Example
 
@@ -525,9 +525,9 @@ This endpoint does not need any parameter.
 
 > \MailInABoxAPI\Client\Model\DNSZonesResponse getDnsZones()
 
+Get DNS zones
 
-
-Retrieve DNS zones.
+Returns an array of all managed top-level domains.
 
 ### Example
 
@@ -580,13 +580,13 @@ This endpoint does not need any parameter.
 [[Back to README]](../../README.md)
 
 
-## removeDnsCustomRecord
+## removeDnsCustomARecord
 
-> string removeDnsCustomRecord($domain, $type, $body)
+> string removeDnsCustomARecord($qname, $body)
 
+Remove DNS custom A record
 
-
-Remove a custom DNS record.
+Removes a DNS custom A record for the specified domain & value.
 
 ### Example
 
@@ -607,15 +607,14 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain = 'domain_example'; // string | DNS record domain
-$type = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\DNSRecordType(); // \MailInABoxAPI\Client\Model\DNSRecordType | Record type
+$qname = 'qname_example'; // string | DNS query name.
 $body = 'body_example'; // string | The value of the DNS record.
 
 try {
-    $result = $apiInstance->removeDnsCustomRecord($domain, $type, $body);
+    $result = $apiInstance->removeDnsCustomARecord($qname, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DNSApi->removeDnsCustomRecord: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DNSApi->removeDnsCustomARecord: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -625,8 +624,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **domain** | **string**| DNS record domain |
- **type** | [**\MailInABoxAPI\Client\Model\DNSRecordType**](../Model/.md)| Record type |
+ **qname** | **string**| DNS query name. |
  **body** | **string**| The value of the DNS record. |
 
 ### Return type
@@ -647,13 +645,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../../README.md)
 
 
-## removeDnsCustomRecordForTypeA
+## removeDnsCustomRecord
 
-> string removeDnsCustomRecordForTypeA($domain, $body)
+> string removeDnsCustomRecord($qname, $rtype, $body)
 
+Remove DNS custom record
 
-
-Remove a custom DNS A record.
+Removes a DNS custom record for the specified domain, type & value.
 
 ### Example
 
@@ -674,14 +672,15 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain = 'domain_example'; // string | DNS record domain.
+$qname = 'qname_example'; // string | DNS record query name
+$rtype = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\DNSRecordType(); // \MailInABoxAPI\Client\Model\DNSRecordType | Record type
 $body = 'body_example'; // string | The value of the DNS record.
 
 try {
-    $result = $apiInstance->removeDnsCustomRecordForTypeA($domain, $body);
+    $result = $apiInstance->removeDnsCustomRecord($qname, $rtype, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DNSApi->removeDnsCustomRecordForTypeA: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DNSApi->removeDnsCustomRecord: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -691,7 +690,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **domain** | **string**| DNS record domain. |
+ **qname** | **string**| DNS record query name |
+ **rtype** | [**\MailInABoxAPI\Client\Model\DNSRecordType**](../Model/.md)| Record type |
  **body** | **string**| The value of the DNS record. |
 
 ### Return type
@@ -716,9 +716,9 @@ Name | Type | Description  | Notes
 
 > string updateDns($force)
 
+Update DNS
 
-
-Update DNS, which involves creating zone files and restarting `nsd`.
+Updates the DNS. Involves creating zone files and restarting `nsd`.
 
 ### Example
 
@@ -775,13 +775,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../../README.md)
 
 
-## updateDnsCustomRecord
+## updateDnsCustomARecord
 
-> string updateDnsCustomRecord($domain, $type, $body)
+> string updateDnsCustomARecord($qname, $body)
 
+Update DNS custom A record
 
-
-Update a custom DNS record.
+Updates an existing DNS custom A record value for the specified qname.
 
 ### Example
 
@@ -802,15 +802,14 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain = 'domain_example'; // string | DNS record domain
-$type = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\DNSRecordType(); // \MailInABoxAPI\Client\Model\DNSRecordType | Record type
+$qname = 'qname_example'; // string | DNS query name.
 $body = 'body_example'; // string | The value of the DNS record.
 
 try {
-    $result = $apiInstance->updateDnsCustomRecord($domain, $type, $body);
+    $result = $apiInstance->updateDnsCustomARecord($qname, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DNSApi->updateDnsCustomRecord: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DNSApi->updateDnsCustomARecord: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -820,8 +819,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **domain** | **string**| DNS record domain |
- **type** | [**\MailInABoxAPI\Client\Model\DNSRecordType**](../Model/.md)| Record type |
+ **qname** | **string**| DNS query name. |
  **body** | **string**| The value of the DNS record. |
 
 ### Return type
@@ -842,13 +840,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../../README.md)
 
 
-## updateDnsCustomRecordForTypeA
+## updateDnsCustomRecord
 
-> string updateDnsCustomRecordForTypeA($domain, $body)
+> string updateDnsCustomRecord($qname, $rtype, $body)
 
+Update DNS custom record
 
-
-Update a custom DNS A record.
+Updates an existing DNS custom record value for the specified qname and type.
 
 ### Example
 
@@ -869,14 +867,15 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain = 'domain_example'; // string | DNS record domain.
+$qname = 'qname_example'; // string | DNS record query name
+$rtype = new \MailInABoxAPI\Client\Model\\MailInABoxAPI\Client\Model\DNSRecordType(); // \MailInABoxAPI\Client\Model\DNSRecordType | Record type
 $body = 'body_example'; // string | The value of the DNS record.
 
 try {
-    $result = $apiInstance->updateDnsCustomRecordForTypeA($domain, $body);
+    $result = $apiInstance->updateDnsCustomRecord($qname, $rtype, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DNSApi->updateDnsCustomRecordForTypeA: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DNSApi->updateDnsCustomRecord: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -886,7 +885,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **domain** | **string**| DNS record domain. |
+ **qname** | **string**| DNS record query name |
+ **rtype** | [**\MailInABoxAPI\Client\Model\DNSRecordType**](../Model/.md)| Record type |
  **body** | **string**| The value of the DNS record. |
 
 ### Return type

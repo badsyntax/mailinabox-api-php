@@ -4,18 +4,18 @@ All URIs are relative to *https://box.example.com/admin*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getSystemBackupConfig**](SystemApi.md#getSystemBackupConfig) | **GET** /system/backup/config | 
-[**getSystemBackupStatus**](SystemApi.md#getSystemBackupStatus) | **GET** /system/backup/status | 
-[**getSystemPrivacyStatus**](SystemApi.md#getSystemPrivacyStatus) | **GET** /system/privacy | 
-[**getSystemRebootStatus**](SystemApi.md#getSystemRebootStatus) | **GET** /system/reboot | 
-[**getSystemStatus**](SystemApi.md#getSystemStatus) | **POST** /system/status | 
-[**getSystemUpdates**](SystemApi.md#getSystemUpdates) | **GET** /system/updates | 
-[**getSystemUpstreamVersion**](SystemApi.md#getSystemUpstreamVersion) | **POST** /system/latest-upstream-version | 
-[**getSystemVersion**](SystemApi.md#getSystemVersion) | **GET** /system/version | 
-[**rebootSystem**](SystemApi.md#rebootSystem) | **POST** /system/reboot | 
-[**updateSystemBackupConfig**](SystemApi.md#updateSystemBackupConfig) | **POST** /system/backup/config | 
-[**updateSystemPackages**](SystemApi.md#updateSystemPackages) | **POST** /system/update-packages | 
-[**updateSystemPrivacy**](SystemApi.md#updateSystemPrivacy) | **POST** /system/privacy | 
+[**getSystemBackupConfig**](SystemApi.md#getSystemBackupConfig) | **GET** /system/backup/config | Get system backup config
+[**getSystemBackupStatus**](SystemApi.md#getSystemBackupStatus) | **GET** /system/backup/status | Get system backup status
+[**getSystemPrivacyStatus**](SystemApi.md#getSystemPrivacyStatus) | **GET** /system/privacy | Get system privacy status
+[**getSystemRebootStatus**](SystemApi.md#getSystemRebootStatus) | **GET** /system/reboot | Get system reboot status
+[**getSystemStatus**](SystemApi.md#getSystemStatus) | **POST** /system/status | Get system status
+[**getSystemUpdates**](SystemApi.md#getSystemUpdates) | **GET** /system/updates | Get system updates
+[**getSystemUpstreamVersion**](SystemApi.md#getSystemUpstreamVersion) | **POST** /system/latest-upstream-version | Get system upstream version
+[**getSystemVersion**](SystemApi.md#getSystemVersion) | **GET** /system/version | Get system version
+[**rebootSystem**](SystemApi.md#rebootSystem) | **POST** /system/reboot | Reboot system
+[**updateSystemBackupConfig**](SystemApi.md#updateSystemBackupConfig) | **POST** /system/backup/config | Update system backup config
+[**updateSystemPackages**](SystemApi.md#updateSystemPackages) | **POST** /system/update-packages | Update system packages
+[**updateSystemPrivacy**](SystemApi.md#updateSystemPrivacy) | **POST** /system/privacy | Update system privacy
 
 
 
@@ -23,9 +23,9 @@ Method | HTTP request | Description
 
 > \MailInABoxAPI\Client\Model\SystemBackupConfigResponse getSystemBackupConfig()
 
+Get system backup config
 
-
-Retrieve backup config.
+Returns the system backup config.
 
 ### Example
 
@@ -82,9 +82,9 @@ This endpoint does not need any parameter.
 
 > \MailInABoxAPI\Client\Model\SystemBackupStatusResponse getSystemBackupStatus()
 
+Get system backup status
 
-
-Retrieve backup status.  If the list of backups is empty, this implies no backups have been made yet.
+Returns the system backup status.  If the list of backups is empty, this implies no backups have been made yet.
 
 ### Example
 
@@ -141,9 +141,9 @@ This endpoint does not need any parameter.
 
 > bool getSystemPrivacyStatus()
 
+Get system privacy status
 
-
-Retrieve new-version check status.  Response:    - `true`: Private, new-version checks will not be performed   - `false`: Not private, new-version checks will be performed
+Returns system privacy (new-version check) status.  Response:    - `true`: Private, new-version checks will not be performed   - `false`: Not private, new-version checks will be performed
 
 ### Example
 
@@ -200,9 +200,9 @@ This endpoint does not need any parameter.
 
 > bool getSystemRebootStatus()
 
+Get system reboot status
 
-
-Retrieve reboot status.  Response:    - `true`: A reboot is required   - `false`: A reboot is not required
+Returns the system reboot status.  Response:    - `true`: A reboot is required   - `false`: A reboot is not required
 
 ### Example
 
@@ -259,9 +259,9 @@ This endpoint does not need any parameter.
 
 > \MailInABoxAPI\Client\Model\SystemStatusResponse getSystemStatus()
 
+Get system status
 
-
-Retrieve system status. Returns an array of statuses which can include headings.
+Returns an array of statuses which can include headings.
 
 ### Example
 
@@ -318,9 +318,9 @@ This endpoint does not need any parameter.
 
 > string getSystemUpdates()
 
+Get system updates
 
-
-Retrieve system updates.
+Returns system (apt) updates.
 
 ### Example
 
@@ -377,9 +377,9 @@ This endpoint does not need any parameter.
 
 > string getSystemUpstreamVersion()
 
+Get system upstream version
 
-
-Retrieve Mail-in-a-Box upstream version.
+Returns Mail-in-a-Box upstream version.
 
 ### Example
 
@@ -436,9 +436,9 @@ This endpoint does not need any parameter.
 
 > string getSystemVersion()
 
+Get system version
 
-
-Retrieve installed Mail-in-a-Box version.
+Returns installed Mail-in-a-Box version.
 
 ### Example
 
@@ -495,9 +495,9 @@ This endpoint does not need any parameter.
 
 > string rebootSystem()
 
+Reboot system
 
-
-Reboot system.
+Reboots the system.
 
 ### Example
 
@@ -543,7 +543,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html
+- **Accept**: text/html
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)
@@ -554,9 +554,9 @@ This endpoint does not need any parameter.
 
 > string updateSystemBackupConfig($target, $targetUser, $targetPass, $minAge)
 
+Update system backup config
 
-
-Update backup config.
+Updates the system backup config.
 
 ### Example
 
@@ -623,9 +623,9 @@ Name | Type | Description  | Notes
 
 > string updateSystemPackages()
 
+Update system packages
 
-
-Update system packages.
+Updates system (apt) packages.
 
 ### Example
 
@@ -682,9 +682,9 @@ This endpoint does not need any parameter.
 
 > string updateSystemPrivacy($value)
 
+Update system privacy
 
-
-Update new-version check status.  Request:    - `value: private`: Disable new version checks   - `value: off`: Enable new version checks
+Updates system privacy (new-version) check status.  Request:    - `value: private`: Disable new version checks   - `value: off`: Enable new version checks
 
 ### Example
 

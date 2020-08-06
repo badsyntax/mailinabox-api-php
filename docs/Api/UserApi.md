@@ -4,7 +4,7 @@ All URIs are relative to *https://box.example.com/admin*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getMe**](UserApi.md#getMe) | **GET** /me | 
+[**getMe**](UserApi.md#getMe) | **GET** /me | Get user information
 
 
 
@@ -12,9 +12,9 @@ Method | HTTP request | Description
 
 > \MailInABoxAPI\Client\Model\MeResponse getMe()
 
+Get user information
 
-
-Get user information, used for user authentication.  Authenticate a user by supplying the auth token as a base64 encoded string in format `email:password` using basic authentication headers.  If successful, a long-lived `api_key` is returned which can be used for subsequent requests to the API.
+Returns user information. Used for user authentication.  Authenticate a user by supplying the auth token as a base64 encoded string in format `email:password` using basic authentication headers.  If successful, a long-lived `api_key` is returned which can be used for subsequent requests to the API.
 
 ### Example
 

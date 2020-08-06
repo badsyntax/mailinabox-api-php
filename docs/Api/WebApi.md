@@ -4,8 +4,8 @@ All URIs are relative to *https://box.example.com/admin*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getWebDomains**](WebApi.md#getWebDomains) | **GET** /web/domains | 
-[**updateWeb**](WebApi.md#updateWeb) | **POST** /web/update | 
+[**getWebDomains**](WebApi.md#getWebDomains) | **GET** /web/domains | Get web domains
+[**updateWeb**](WebApi.md#updateWeb) | **POST** /web/update | Update web
 
 
 
@@ -13,9 +13,9 @@ Method | HTTP request | Description
 
 > \MailInABoxAPI\Client\Model\WebDomain[] getWebDomains()
 
+Get web domains
 
-
-Retrieve all static web domains.
+Returns all static web domains.
 
 ### Example
 
@@ -72,9 +72,9 @@ This endpoint does not need any parameter.
 
 > string updateWeb()
 
+Update web
 
-
-Update static websites, used for updating domain root directories.
+Updates static websites, used for updating domain root directories.
 
 ### Example
 
