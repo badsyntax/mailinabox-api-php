@@ -4,8 +4,8 @@
 
 PHP client SDK for the Mail-in-a-Box API.
 
-- API version: 0.47.0
-- Package version: 0.47.0
+- API version: 0.51.0
+- Package version: 0.51.0
 
 https://packagist.org/packages/mailinabox/mailinabox-api
 
@@ -24,7 +24,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```json
 {
   "require": {
-    "mailinabox/mailinabox-api": "0.47.0"
+    "mailinabox/mailinabox-api": "0.51.0"
   }
 }
 ```
@@ -71,7 +71,7 @@ $apiInstance = new MailInABoxAPI\Client\Api\DNSApi(
     $config
 );
 $qname = 'qname_example'; // string | DNS query name.
-$body = 'body_example'; // string | The value of the DNS record.
+$body = 1.2.3.4; // string | 
 
 try {
     $result = $apiInstance->addDnsCustomARecord($qname, $body);
@@ -97,12 +97,16 @@ Class | Method | HTTP request | Description
 *DNSApi* | [**getDnsCustomRecordsForQNameAndType**](docs/Api/DNSApi.md#getdnscustomrecordsforqnameandtype) | **GET** /dns/custom/{qname}/{rtype} | Get DNS custom records
 *DNSApi* | [**getDnsDump**](docs/Api/DNSApi.md#getdnsdump) | **GET** /dns/dump | Get DNS dump
 *DNSApi* | [**getDnsSecondaryNameserver**](docs/Api/DNSApi.md#getdnssecondarynameserver) | **GET** /dns/secondary-nameserver | Get DNS secondary nameserver
+*DNSApi* | [**getDnsZonefile**](docs/Api/DNSApi.md#getdnszonefile) | **GET** /dns/zonefile/{zone} | Get DNS zonefile
 *DNSApi* | [**getDnsZones**](docs/Api/DNSApi.md#getdnszones) | **GET** /dns/zones | Get DNS zones
 *DNSApi* | [**removeDnsCustomARecord**](docs/Api/DNSApi.md#removednscustomarecord) | **DELETE** /dns/custom/{qname} | Remove DNS custom A record
 *DNSApi* | [**removeDnsCustomRecord**](docs/Api/DNSApi.md#removednscustomrecord) | **DELETE** /dns/custom/{qname}/{rtype} | Remove DNS custom record
 *DNSApi* | [**updateDns**](docs/Api/DNSApi.md#updatedns) | **POST** /dns/update | Update DNS
 *DNSApi* | [**updateDnsCustomARecord**](docs/Api/DNSApi.md#updatednscustomarecord) | **PUT** /dns/custom/{qname} | Update DNS custom A record
 *DNSApi* | [**updateDnsCustomRecord**](docs/Api/DNSApi.md#updatednscustomrecord) | **PUT** /dns/custom/{qname}/{rtype} | Update DNS custom record
+*MFAApi* | [**mfaStatus**](docs/Api/MFAApi.md#mfastatus) | **POST** /mfa/status | Retrieve MFA status for you or another user
+*MFAApi* | [**mfaTotpDisable**](docs/Api/MFAApi.md#mfatotpdisable) | **POST** /mfa/disable | Disable multi-factor authentication for you or another user
+*MFAApi* | [**mfaTotpEnable**](docs/Api/MFAApi.md#mfatotpenable) | **POST** /mfa/totp/enable | Enable TOTP authentication
 *MailApi* | [**addMailUser**](docs/Api/MailApi.md#addmailuser) | **POST** /mail/users/add | Add mail user
 *MailApi* | [**addMailUserPrivilege**](docs/Api/MailApi.md#addmailuserprivilege) | **POST** /mail/users/privileges/add | Add mail user privilege
 *MailApi* | [**getMailAliases**](docs/Api/MailApi.md#getmailaliases) | **GET** /mail/aliases | Get mail aliases
@@ -166,6 +170,11 @@ Class | Method | HTTP request | Description
  - [MailUsersResponseFormat](docs/Model/MailUsersResponseFormat.md)
  - [MeAuthStatus](docs/Model/MeAuthStatus.md)
  - [MeResponse](docs/Model/MeResponse.md)
+ - [MfaDisableRequest](docs/Model/MfaDisableRequest.md)
+ - [MfaEnableRequest](docs/Model/MfaEnableRequest.md)
+ - [MfaStatusResponse](docs/Model/MfaStatusResponse.md)
+ - [MfaStatusResponseEnabledMfa](docs/Model/MfaStatusResponseEnabledMfa.md)
+ - [MfaStatusResponseNewMfa](docs/Model/MfaStatusResponseNewMfa.md)
  - [SSLCSRGenerateRequest](docs/Model/SSLCSRGenerateRequest.md)
  - [SSLCertificateInstallRequest](docs/Model/SSLCertificateInstallRequest.md)
  - [SSLCertificatesProvisionResponse](docs/Model/SSLCertificatesProvisionResponse.md)

@@ -683,7 +683,7 @@ $apiInstance = new MailInABoxAPI\Client\Api\MailApi(
 );
 $updateIfExists = 56; // int | Set to `1` when updating an alias.
 $address = 'address_example'; // string | Email format.
-$forwardsTo = 'forwardsTo_example'; // string | If adding a regular or catch-all alias, the format needs to be `email1@example.com`. Multiple address can be separated by newlines or commas.  If adding a domain alias, the format needs to be `@example.com`.
+$forwardsTo = 'forwardsTo_example'; // string | If adding a regular or catch-all alias, the format needs to be `user@example.com`. Multiple address can be separated by newlines or commas.  If adding a domain alias, the format needs to be `@example.com`.
 $permittedSenders = 'permittedSenders_example'; // string | Mail users that can send mail claiming to be from any address on the alias domain. Multiple address can be separated by newlines or commas.  Leave empty to allow any mail user listed in `forwards_to` to send mail claiming to be from any address on the alias domain.
 
 try {
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateIfExists** | **int**| Set to &#x60;1&#x60; when updating an alias. |
  **address** | [**string**](../Model/string.md)| Email format. |
- **forwardsTo** | **string**| If adding a regular or catch-all alias, the format needs to be &#x60;email1@example.com&#x60;. Multiple address can be separated by newlines or commas.  If adding a domain alias, the format needs to be &#x60;@example.com&#x60;. |
+ **forwardsTo** | **string**| If adding a regular or catch-all alias, the format needs to be &#x60;user@example.com&#x60;. Multiple address can be separated by newlines or commas.  If adding a domain alias, the format needs to be &#x60;@example.com&#x60;. |
  **permittedSenders** | **string**| Mail users that can send mail claiming to be from any address on the alias domain. Multiple address can be separated by newlines or commas.  Leave empty to allow any mail user listed in &#x60;forwards_to&#x60; to send mail claiming to be from any address on the alias domain. |
 
 ### Return type
