@@ -5,7 +5,7 @@
 PHP client SDK for the Mail-in-a-Box API.
 
 - API version: 0.51.0
-- Package version: 0.51.0
+- Package version: 0.51.1
 
 https://packagist.org/packages/mailinabox/mailinabox-api
 
@@ -24,7 +24,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```json
 {
   "require": {
-    "mailinabox/mailinabox-api": "0.51.0"
+    "mailinabox/mailinabox-api": "0.51.1"
   }
 }
 ```
